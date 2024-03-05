@@ -15,10 +15,13 @@ const items = ref([
     {id: 3 , label:'Pan'},
     {id: 4 , label:'Huevos'}
 ]);
+//Creando variable reactiva 
+const newItem=ref('');
 </script>
 
 <template>
 <h1><i :class="shoppingIcon">local_mall</i>{{ header }}</h1>
+<input v-model="newItem"  type="text" placeholder="Agregar Articulo">
 <ul>
     <li v-for="{id , label } in items" v-bind:key="id">⭐ {{label}}</li>
 </ul>
